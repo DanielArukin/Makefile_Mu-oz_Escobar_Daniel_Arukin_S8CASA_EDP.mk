@@ -1,0 +1,9 @@
+resultados.pdf:	resultados.tex Plot_S8_Muñoz_Escobar_Daniel_Arukin.pdf
+	pdf.latex resultados.tex
+
+Plot_S8_Muñoz_Escobar_Daniel_Arukin.pdf:	Plot_S8_Muñoz_Escobar_Daniel_Arukin.py Posicion_de_la_cuerda.dat
+	python3 Plot_S8_Muñoz_Escobar_Daniel_Arukin.py
+
+Posicion_de_la_cuerda.dat:	Muñoz_Escobar_Daniel_Arukin_S8C1_EDP.cpp
+	g++ Muñoz_Escobar_Daniel_Arukin_S8C1_EDP.cpp
+	./a.out>>datos_LeapFrog_sol_fijo.dat
